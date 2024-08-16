@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.224.0/assert/assert_equals.ts";
-import is from "../mod.ts"; // Assume-se que a função `date` esteja definida
+import is from "../mod.ts";
 
 Deno.test('Valid date object', () => {
   // Validação de objetos Date válidos

@@ -1,10 +1,18 @@
 
-import * as characters from './lib/character.ts'
-import * as date from './lib/date.ts'
+import * as character from './character.ts'
+import * as date from './date.ts'
+import * as type from './type.ts'
 
 const is = {
-  ...characters,
+  ...character,
   ...date,
+  ...type
 }
 
 export default is
+
+export {
+  character,
+  date,
+  type
+}
