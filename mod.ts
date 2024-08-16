@@ -51,5 +51,6 @@ export {
   date,
   /**
    * type module will include checks of data types
+   */
   type
 }
