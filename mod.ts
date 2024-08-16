@@ -11,8 +11,17 @@ import * as type from './type.ts'
  * console.log(is.array([])) // true
  */
 const is = {
+  /**
+   * character module will include checks that may availate true to a single character
+   */
   ...character,
+  /**
+   * date module will include checks that are related to dates
+   */
   ...date,
+  /**
+   * type module will include checks of data types
+   */
   ...type
 }
 
@@ -32,7 +41,15 @@ export default is
  * console.log(type.array([])) // true
  */
 export {
+  /**
+   * character module will include checks that may availate true to a single character
+   */
   character,
+  /**
+   * date module will include checks that are related to dates
+   */
   date,
+  /**
+   * type module will include checks of data types
   type
 }
