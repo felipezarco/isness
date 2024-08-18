@@ -1,14 +1,13 @@
-
 import * as character from './character.ts'
 import * as date from './date.ts'
 import * as type from './type.ts'
 
 /**
- * module is
- * @description A collection of functions to check the type of a value.
- * @example
- * import is from '@zarco/isness'
- * console.log(is.array([])) // true
+ * The `is` object aggregates various modules that provide utility functions for different types of checks.
+ * 
+ * @property {Object} character - Module that includes checks that may evaluate true for a single character.
+ * @property {Object} date - Module that includes checks related to dates.
+ * @property {Object} type - Module that includes checks of data types.
  */
 const is = {
   /**

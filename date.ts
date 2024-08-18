@@ -1,7 +1,10 @@
-/** Check if value is a date
- * @param value - the value to check
- * @param options - an object with a format property to specify the date format (ISO8601, American, European, Asian)
- * @returns boolean
+/**
+ * Checks if the given value is a valid date according to the specified format or any of the supported formats.
+ *
+ * @param value - The value to be validated as a date. It can be a Date object or a string.
+ * @param options - Optional parameter to specify the date format for validation.
+ * @param options.format - The format to validate the date string against. Supported formats are 'ISO8601', 'American', 'European', and 'Asian'.
+ * @returns `true` if the value is a valid date according to the specified format or any of the supported formats, otherwise `false`.
  */
 export function date(value: any, options?: { format: 'ISO8601' | 'American' | 'European' | 'Asian' }): boolean {
   // Check if value is an instance of Date and valid

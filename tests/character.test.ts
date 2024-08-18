@@ -154,6 +154,7 @@ Deno.test('digit', () => {
   assertEquals(is.digit('1'), true)
   assertEquals(is.digit('9'), true)
   
+  assertEquals(is.digit('1337'), false)
   assertEquals(is.digit(''), false)
   assertEquals(is.digit(' '), false)
   assertEquals(is.digit('a'), false)
