@@ -72,9 +72,9 @@ The following are the date-related methods.
 ## Contributing
 
 If you would like to contribute to this package you can (and should)
-[open an issue](https://github.com/felipezarco/responser/issues/new) and/or
+[open an issue](https://github.com/felipezarco/isness/issues/new) and/or
 submit your own
-[pull request](https://github.com/felipezarco/responser/compare).
+[pull request](https://github.com/felipezarco/isness/compare).
 
 Thanks for your interest in contributing to this repo!
 
@@ -85,7 +85,7 @@ Thanks for your interest in contributing to this repo!
 ## License
 
 This code is licensed under the
-[MIT License](https://github.com/felipezarco/responser/blob/master/LICENSE.md).
+[MIT License](https://github.com/felipezarco/isness/blob/main/LICENSE).
 See the
-[LICENSE.md](https://github.com/felipezarco/responser/blob/master/LICENSE.md)
+[LICENSE](https://github.com/felipezarco/isness/blob/main/LICENSE)
 file for more info.
