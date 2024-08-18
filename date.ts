@@ -13,18 +13,44 @@ export function date(value: any, options?: { format: 'ISO8601' | 'American' | 'E
     return false;
   }
 
+  /**
+   * Patterns to validate date formats
+   * Requires Z or offset when milliseconds are present, otherwise optional
+   * ISO 8601 format
+   * American format
+   * European format
+   * Asian format
+   */
   const patterns = {
-    // ISO 8601 format: Requires Z or offset when milliseconds are present, otherwise optional
+    /**
+     * ISO 8601 format
+     * Requires Z or offset when milliseconds are present
+     * Optional time component
+     * Format: YYYY-MM-DDTHH:MM:SS[.SSS][Z|+HH:MM|-HH:MM]
+     */
     ISO8601: /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}(:\d{2})?(\.\d{3}(Z|[+-]\d{2}:\d{2}))?)?$/,
 
-    // American format: No milliseconds or timezone allowed
+    /**
+     * American format
+     * Time component is optional
+     * Format: MM/DD/YYYY [HH:MM[:SS]]
+     */
     American: /^\d{2}\/\d{2}\/\d{4}( \d{2}:\d{2}(:\d{2})?)?$/,
 
-    // European format: No milliseconds or timezone allowed
+    /** 
+     * European format
+     * Time component is optional
+     * Format: DD/MM/YYYY [HH:MM[:SS]]
+     */
     European: /^\d{2}\/\d{2}\/\d{4}( \d{2}:\d{2}(:\d{2})?)?$/,
 
-    // Asian format: No milliseconds or timezone allowed
+    /**
+     * Asian format
+     * Time component is optional
+     * Format: YYYY/MM/DD [HH:MM[:SS]]
+     */
     Asian: /^\d{4}\/\d{2}\/\d{2}( \d{2}:\d{2}(:\d{2})?)?$/,
+
   };
 
   // If format option is specified, validate against the selected format
