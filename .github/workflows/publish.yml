@@ -1,5 +1,6 @@
 # .github/workflows/publish.yml
-name: Publish
+
+name: Test and Publish
 
 on:
   push:
@@ -13,9 +14,12 @@ jobs:
       contents: read
       id-token: write  
     steps:
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x # Run with latest stable Deno
+      - run: deno fmt --check
+      - run: deno lint
+      - run: deno test
       - uses: actions/checkout@v4
-      - name: Install Deno
-        run: curl -fsSL https://deno.land/x/install/install.sh | sh
-      - name: Run Deno Tests
-        run: ./deno/bin/deno test
       - run: npx jsr publish

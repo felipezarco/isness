@@ -24,7 +24,7 @@ export function alphanumeric(str: string): boolean {
  * @returns `true` if the string is ascii, otherwise `false`.
  */
 export function ascii(str: string): boolean {
-  return /^[\x00-\xFF]+$/.test(str);
+  return /^[\x00-\x7F]+$/.test(str);
 }
 
 /**

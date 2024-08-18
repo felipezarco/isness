@@ -1,4 +1,3 @@
-
 /**
  * Checks if value is an array
  * @param value The value to check
@@ -10,7 +9,7 @@
  * is.array('') // false
  * is.array(0) // false
  */
-export function array(value: any): boolean {
+export function array(value: unknown): boolean {
   return Array.isArray(value);
 }
 
@@ -19,7 +18,7 @@ export function array(value: any): boolean {
  * @param value The value to check
  * @returns boolean
  */
-export function string(value: any): boolean {
+export function string(value: unknown): boolean {
   return typeof value === 'string';
 }
 
@@ -28,7 +27,7 @@ export function string(value: any): boolean {
  * @param value The value to check
  * @returns boolean
  */
-export function boolean(value: any): boolean {
+export function boolean(value: unknown): boolean {
   return typeof value === 'boolean';
 }
 
@@ -51,7 +50,14 @@ export function boolean(value: any): boolean {
  * is.booleanLike(null) // false
  * is.booleanLike(undefined) // false
  */
-export function booleanLike(value: any): boolean {
-  return [true, false, 'true', 'false', '1', '0', 1, 0].includes(value);
+export function booleanLike(value: unknown): boolean {
+  if (typeof value === 'boolean') return true
+  if (value === 'true') return true
+  if (value === 'false') return true
+  if (value === '1') return true
+  if (value === '0') return true
+  if (value === 1) return true
+  if (value === 0) return true
+  return false
 }
 

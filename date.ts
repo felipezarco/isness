@@ -6,7 +6,7 @@
  * @param options.format - The format to validate the date string against. Supported formats are 'ISO8601', 'American', 'European', and 'Asian'.
  * @returns `true` if the value is a valid date according to the specified format or any of the supported formats, otherwise `false`.
  */
-export function date(value: any, options?: { format: 'ISO8601' | 'American' | 'European' | 'Asian' }): boolean {
+export function date(value: unknown, options?: { format: 'ISO8601' | 'American' | 'European' | 'Asian' }): boolean {
   // Check if value is an instance of Date and valid
   if (value instanceof Date && !isNaN(value.getTime())) {
     return true;
