@@ -6,13 +6,16 @@
  * @param options.format - The format to validate the date string against. Supported formats are 'ISO8601', 'American', 'European', and 'Asian'.
  * @returns `true` if the value is a valid date according to the specified format or any of the supported formats, otherwise `false`.
  */
-export function date(value: unknown, options?: { format: 'ISO8601' | 'American' | 'European' | 'Asian' }): boolean {
+export function date(
+  value: unknown,
+  options?: { format: "ISO8601" | "American" | "European" | "Asian" },
+): boolean {
   // Check if value is an instance of Date and valid
   if (value instanceof Date && !isNaN(value.getTime())) {
     return true;
   }
 
-  if (typeof value !== 'string') {
+  if (typeof value !== "string") {
     return false;
   }
 
@@ -31,7 +34,8 @@ export function date(value: unknown, options?: { format: 'ISO8601' | 'American' 
      * Optional time component
      * Format: YYYY-MM-DDTHH:MM:SS[.SSS][Z|+HH:MM|-HH:MM]
      */
-    ISO8601: /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}(:\d{2})?(\.\d{3}(Z|[+-]\d{2}:\d{2}))?)?$/,
+    ISO8601:
+      /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}(:\d{2})?(\.\d{3}(Z|[+-]\d{2}:\d{2}))?)?$/,
 
     /**
      * American format
@@ -40,7 +44,7 @@ export function date(value: unknown, options?: { format: 'ISO8601' | 'American' 
      */
     American: /^\d{2}\/\d{2}\/\d{4}( \d{2}:\d{2}(:\d{2})?)?$/,
 
-    /** 
+    /**
      * European format
      * Time component is optional
      * Format: DD/MM/YYYY [HH:MM[:SS]]
@@ -53,7 +57,6 @@ export function date(value: unknown, options?: { format: 'ISO8601' | 'American' 
      * Format: YYYY/MM/DD [HH:MM[:SS]]
      */
     Asian: /^\d{4}\/\d{2}\/\d{2}( \d{2}:\d{2}(:\d{2})?)?$/,
-
   };
 
   // If format option is specified, validate against the selected format

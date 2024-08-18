@@ -7,7 +7,6 @@ export function alphabetic(str: string): boolean {
   return /^[a-zA-Z]+$/.test(str);
 }
 
-
 /**
  * Checks if the given string consists only of alphanumeric characters.
  *
@@ -33,7 +32,7 @@ export function ascii(str: string): boolean {
  * @returns `true` if the string is a digit, otherwise `false`.
  */
 export function digit(str: string): boolean {
-  return /^[0-9]$/.test(str)
+  return /^[0-9]$/.test(str);
 }
 
 /**

@@ -19,7 +19,7 @@ export function array(value: unknown): boolean {
  * @returns boolean
  */
 export function string(value: unknown): boolean {
-  return typeof value === 'string';
+  return typeof value === "string";
 }
 
 /**
@@ -28,7 +28,7 @@ export function string(value: unknown): boolean {
  * @returns boolean
  */
 export function boolean(value: unknown): boolean {
-  return typeof value === 'boolean';
+  return typeof value === "boolean";
 }
 
 /**
@@ -51,13 +51,12 @@ export function boolean(value: unknown): boolean {
  * is.booleanLike(undefined) // false
  */
 export function booleanLike(value: unknown): boolean {
-  if (typeof value === 'boolean') return true
-  if (value === 'true') return true
-  if (value === 'false') return true
-  if (value === '1') return true
-  if (value === '0') return true
-  if (value === 1) return true
-  if (value === 0) return true
-  return false
+  if (typeof value === "boolean") return true;
+  if (value === "true") return true;
+  if (value === "false") return true;
+  if (value === "1") return true;
+  if (value === "0") return true;
+  if (value === 1) return true;
+  if (value === 0) return true;
+  return false;
 }
-

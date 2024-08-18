@@ -3,21 +3,21 @@
  * @module
  */
 
-import { alphabetic } from './character.ts'
-import { alphanumeric } from './character.ts'
-import { ascii } from './character.ts'
-import { digit } from './character.ts'
-import { hexadecimal } from './character.ts'
-import { lowercase } from './character.ts'
-import { uppercase } from './character.ts'
-import { whitespace } from './character.ts'
+import { alphabetic } from "./character.ts";
+import { alphanumeric } from "./character.ts";
+import { ascii } from "./character.ts";
+import { digit } from "./character.ts";
+import { hexadecimal } from "./character.ts";
+import { lowercase } from "./character.ts";
+import { uppercase } from "./character.ts";
+import { whitespace } from "./character.ts";
 
-import { date } from './date.ts'
+import { date } from "./date.ts";
 
-import { array } from './type.ts'
-import { string } from './type.ts'
-import { boolean } from './type.ts'
-import { booleanLike } from './type.ts'
+import { array } from "./type.ts";
+import { string } from "./type.ts";
+import { boolean } from "./type.ts";
+import { booleanLike } from "./type.ts";
 
 /**
  * The `is` object aggregates various modules that provide utility functions for different types of checks.
@@ -32,34 +32,34 @@ const is = {
   uppercase,
   whitespace,
   date,
-  array, 
+  array,
   string,
   boolean,
-  booleanLike
-}
+  booleanLike,
+};
 
 /**
  * Export as default
  * @description A collection of functions to check the type of a value.
  */
-export default is
+export default is;
 
 /**
  * Export as named functions
- * @description Each function is exported separately 
+ * @description Each function is exported separately
  */
 export {
   alphabetic,
   alphanumeric,
+  array,
   ascii,
+  boolean,
+  booleanLike,
+  date,
   digit,
   hexadecimal,
   lowercase,
+  string,
   uppercase,
   whitespace,
-  date,
-  array,
-  string,
-  boolean,
-  booleanLike
-}
+};
