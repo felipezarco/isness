@@ -1,27 +1,41 @@
-import * as character from './character.ts'
-import * as date from './date.ts'
-import * as type from './type.ts'
+/**
+ * A simple library to check if a value is what you expect it to be.
+ * @module
+ */
+
+import { alphabetic } from './character.ts'
+import { alphanumeric } from './character.ts'
+import { ascii } from './character.ts'
+import { digit } from './character.ts'
+import { hexadecimal } from './character.ts'
+import { lowercase } from './character.ts'
+import { uppercase } from './character.ts'
+import { whitespace } from './character.ts'
+
+import { date } from './date.ts'
+
+import { array } from './type.ts'
+import { string } from './type.ts'
+import { boolean } from './type.ts'
+import { booleanLike } from './type.ts'
 
 /**
  * The `is` object aggregates various modules that provide utility functions for different types of checks.
- * 
- * @property {Object} character - Module that includes checks that may evaluate true for a single character.
- * @property {Object} date - Module that includes checks related to dates.
- * @property {Object} type - Module that includes checks of data types.
  */
 const is = {
-  /**
-   * character module will include checks that may availate true to a single character
-   */
-  ...character,
-  /**
-   * date module will include checks that are related to dates
-   */
-  ...date,
-  /**
-   * type module will include checks of data types
-   */
-  ...type
+  alphabetic,
+  alphanumeric,
+  ascii,
+  digit,
+  hexadecimal,
+  lowercase,
+  uppercase,
+  whitespace,
+  date,
+  array, 
+  string,
+  boolean,
+  booleanLike
 }
 
 /**
@@ -32,24 +46,20 @@ export default is
 
 /**
  * Export as named functions
- * @description A collection of functions to check the type of a value.
- * @example
- * import { character, date, type } from '@zarco/isness'
- * console.log(character.letter('a')) // true
- * console.log(date.date(new Date())) // true
- * console.log(type.array([])) // true
+ * @description Each function is exported separately 
  */
 export {
-  /**
-   * character module will include checks that may availate true to a single character
-   */
-  character,
-  /**
-   * date module will include checks that are related to dates
-   */
+  alphabetic,
+  alphanumeric,
+  ascii,
+  digit,
+  hexadecimal,
+  lowercase,
+  uppercase,
+  whitespace,
   date,
-  /**
-   * type module will include checks of data types
-   */
-  type
+  array,
+  string,
+  boolean,
+  booleanLike
 }
