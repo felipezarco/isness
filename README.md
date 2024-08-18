@@ -87,5 +87,5 @@ Thanks for your interest in contributing to this repo!
 This code is licensed under the
 [MIT License](https://github.com/felipezarco/isness/blob/main/LICENSE).
 See the
-[LICENSE.md](https://github.com/felipezarco/isness/blob/main/LICENSE)
+[LICENSE](https://github.com/felipezarco/isness/blob/main/LICENSE)
 file for more info.
