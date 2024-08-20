@@ -1,8 +1,8 @@
 /**
  * `isness`
- * 
+ *
  * A simple library to check if a value is what you expect it to be.
- * 
+ *
  * ### Methods
  *
  * #### Character
@@ -16,7 +16,6 @@
  * #### Date
  *
  * Date-related methods.
- *
  */
 
 import { alphabetic } from "./character.ts";
