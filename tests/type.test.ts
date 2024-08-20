@@ -147,6 +147,8 @@ Deno.test("number", () => {
   assertEquals(is.number(Number.MIN_SAFE_INTEGER), true, "Number");
   assertEquals(is.number(Number.MIN_SAFE_INTEGER - 1), true, "Number");
   assertEquals(is.number(Number.MAX_SAFE_INTEGER + 1), true, "Number");
+  assertEquals(is.number("  123 "), true, "String");
+  assertEquals(is.number("  1 23 "), false, "String");
   assertEquals(is.number([]), false, "Array");
   assertEquals(is.number({}), false, "Object");
   assertEquals(is.number(""), false, "String");

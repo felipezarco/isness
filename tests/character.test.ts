@@ -101,7 +101,7 @@ Deno.test("alphanumeric", () => {
 });
 
 Deno.test("ascii", () => {
-  assertEquals(is.ascii(""), false);
+  assertEquals(is.ascii(""), true);
   assertEquals(is.ascii(" "), true);
   assertEquals(is.ascii("a"), true);
   assertEquals(is.ascii("A"), true);
@@ -152,7 +152,11 @@ Deno.test("digit", () => {
   assertEquals(is.digit("0"), true);
   assertEquals(is.digit("1"), true);
   assertEquals(is.digit("9"), true);
-
+  assertEquals(is.digit(0), true);
+  assertEquals(is.digit(1), true);
+  assertEquals(is.digit(9), true);
+  assertEquals(is.digit(-1), false);
+  assertEquals(is.digit("00"), false);
   assertEquals(is.digit("1337"), false);
   assertEquals(is.digit(""), false);
   assertEquals(is.digit(" "), false);
@@ -190,62 +194,150 @@ Deno.test("digit", () => {
   assertEquals(is.digit("/"), false);
   assertEquals(is.digit("`"), false);
   assertEquals(is.digit("~"), false);
+
+  assertEquals(is.digit(null), false);
+  assertEquals(is.digit(undefined), false);
+  assertEquals(is.digit(true), false);
+  assertEquals(is.digit(false), false);
+
+  assertEquals(is.digit([]), false);
+  assertEquals(is.digit({}), false);
+  assertEquals(is.digit(() => {}), false);
+  assertEquals(is.digit(new Date()), false);
+  assertEquals(is.digit(/./), false);
+  assertEquals(is.digit(Symbol()), false);
+  assertEquals(is.digit(BigInt(1)), false);
 });
 
 Deno.test("hexadecimal", () => {
-  // Casos válidos de hexadecimal
-  assertEquals(is.hexadecimal("0123456789abcdef"), true); // Todos os dígitos hexadecimais em minúsculas
-  assertEquals(is.hexadecimal("0123456789ABCDEF"), true); // Todos os dígitos hexadecimais em maiúsculas
-  assertEquals(is.hexadecimal("a1b2c3d4e5f6"), true); // Combinação de dígitos hexadecimais em minúsculas
-  assertEquals(is.hexadecimal("A1B2C3D4E5F6"), true); // Combinação de dígitos hexadecimais em maiúsculas
-  assertEquals(is.hexadecimal("0"), true); // Apenas um dígito hexadecimal
+  // Valid hexadecimal cases
+  assertEquals(is.hexadecimal("0123456789abcdef"), true); // All lowercase hexadecimal digits
+  assertEquals(is.hexadecimal("0123456789ABCDEF"), true); // All uppercase hexadecimal digits
+  assertEquals(is.hexadecimal("a1b2c3d4e5f6"), true); // Combination of lowercase hexadecimal digits
+  assertEquals(is.hexadecimal("A1B2C3D4E5F6"), true); // Combination of uppercase hexadecimal digits
+  assertEquals(is.hexadecimal("0"), true); // Single hexadecimal digit
 
-  // Casos inválidos de hexadecimal
-  assertEquals(is.hexadecimal(""), false); // String vazia
-  assertEquals(is.hexadecimal("g"), false); // Caractere não-hexadecimal
-  assertEquals(is.hexadecimal("0123456789abcdefg"), false); // Caractere não-hexadecimal
-  assertEquals(is.hexadecimal("hijklmnopqrstuvwxyz"), false); // Letras não-hexadecimais
-  assertEquals(is.hexadecimal("ABCDEFGHJKLMNOPQRSTUVWXYZ"), false); // Letras não-hexadecimais
-  assertEquals(is.hexadecimal("!@#$%^&*()"), false); // Caracteres especiais
-  assertEquals(is.hexadecimal("0123456789abcdef!@#$%^&*()"), false); // Combinação de caracteres inválidos
+  // Invalid hexadecimal cases
+  assertEquals(is.hexadecimal(""), false); // Empty string
+  assertEquals(is.hexadecimal("g"), false); // Non-hexadecimal character
+  assertEquals(is.hexadecimal("0123456789abcdefg"), false); // Non-hexadecimal character
+  assertEquals(is.hexadecimal("hijklmnopqrstuvwxyz"), false); // Non-hexadecimal letters
+  assertEquals(is.hexadecimal("ABCDEFGHJKLMNOPQRSTUVWXYZ"), false); // Non-hexadecimal letters
+  assertEquals(is.hexadecimal("!@#$%^&*()"), false); // Special characters
+  assertEquals(is.hexadecimal("0123456789abcdef!@#$%^&*()"), false); // Combination of invalid characters
+
+  // Other data types
+  assertEquals(is.hexadecimal(null), false); // Null value
+  assertEquals(is.hexadecimal(undefined), false); // Undefined value
+  assertEquals(is.hexadecimal(true), false); // Boolean
+  assertEquals(is.hexadecimal(false), false); // Boolean
+  assertEquals(is.hexadecimal([]), false); // Array
+  assertEquals(is.hexadecimal({}), false); // Object
+  assertEquals(is.hexadecimal(() => {}), false); // Function
+  assertEquals(is.hexadecimal(new Date()), false); // Date
+  assertEquals(is.hexadecimal(/./), false); // Regex
+  assertEquals(is.hexadecimal(Symbol()), false); // Symbol
+  assertEquals(is.hexadecimal(BigInt(1)), false); // BigInt
 });
 
 Deno.test("lowercase", () => {
-  // Casos válidos de letras minúsculas
+  // Valid lowercase cases
   assertEquals(is.lowercase("a"), true);
   assertEquals(is.lowercase("b"), true);
   assertEquals(is.lowercase("z"), true);
   assertEquals(is.lowercase("hello"), true);
   assertEquals(is.lowercase("world"), true);
 
-  // Casos inválidos de letras minúsculas
-  assertEquals(is.lowercase("A"), false); // Letra maiúscula
-  assertEquals(is.lowercase("B"), false); // Letra maiúscula
-  assertEquals(is.lowercase("Z"), false); // Letra maiúscula
-  assertEquals(is.lowercase("Hello"), false); // Letra maiúscula
-  assertEquals(is.lowercase("WORLD"), false); // Letra maiúscula
-  assertEquals(is.lowercase("123"), false); // Números
-  assertEquals(is.lowercase("@"), false); // Caractere especial
-  assertEquals(is.lowercase(" "), false); // Espaço em branco
-  assertEquals(is.lowercase(""), false); // String vazia
+  // Invalid lowercase cases
+  assertEquals(is.lowercase("A"), false); // Uppercase letter
+  assertEquals(is.lowercase("B"), false); // Uppercase letter
+  assertEquals(is.lowercase("Z"), false); // Uppercase letter
+  assertEquals(is.lowercase("Hello"), false); // Uppercase letter
+  assertEquals(is.lowercase("WORLD"), false); // Uppercase letter
+  assertEquals(is.lowercase("123"), false); // Numbers
+  assertEquals(is.lowercase("@"), false); // Special character
+  assertEquals(is.lowercase(" "), false); // Whitespace
+  assertEquals(is.lowercase(""), false); // Empty string
+
+  // Other data types
+  assertEquals(is.lowercase(null), false); // Null value
+  assertEquals(is.lowercase(undefined), false); // Undefined value
+  assertEquals(is.lowercase(true), false); // Boolean
+  assertEquals(is.lowercase(false), false); // Boolean
+  assertEquals(is.lowercase([]), false); // Array
+  assertEquals(is.lowercase({}), false); // Object
+  assertEquals(is.lowercase(() => {}), false); // Function
+  assertEquals(is.lowercase(new Date()), false); // Date
+  assertEquals(is.lowercase(/./), false); // Regex
+  assertEquals(is.lowercase(Symbol()), false); // Symbol
+  assertEquals(is.lowercase(BigInt(1)), false); // BigInt
 });
 
 Deno.test("uppercase", () => {
-  // Casos válidos de letras maiúsculas
+  // Valid uppercase cases
   assertEquals(is.uppercase("A"), true);
   assertEquals(is.uppercase("B"), true);
   assertEquals(is.uppercase("Z"), true);
   assertEquals(is.uppercase("HELLO"), true);
   assertEquals(is.uppercase("WORLD"), true);
 
-  // Casos inválidos de letras maiúsculas
-  assertEquals(is.uppercase("a"), false); // Letra minúscula
-  assertEquals(is.uppercase("b"), false); // Letra minúscula
-  assertEquals(is.uppercase("z"), false); // Letra minúscula
-  assertEquals(is.uppercase("Hello"), false); // Letra minúscula
-  assertEquals(is.uppercase("world"), false); // Letra minúscula
-  assertEquals(is.uppercase("123"), false); // Números
-  assertEquals(is.uppercase("@"), false); // Caractere especial
-  assertEquals(is.uppercase(" "), false); // Espaço em branco
-  assertEquals(is.uppercase(""), false); // String vazia
+  // Invalid uppercase cases
+  assertEquals(is.uppercase("a"), false); // Lowercase letter
+  assertEquals(is.uppercase("b"), false); // Lowercase letter
+  assertEquals(is.uppercase("z"), false); // Lowercase letter
+  assertEquals(is.uppercase("Hello"), false); // Lowercase letter
+  assertEquals(is.uppercase("world"), false); // Lowercase letter
+  assertEquals(is.uppercase("123"), false); // Numbers
+  assertEquals(is.uppercase("@"), false); // Special character
+  assertEquals(is.uppercase(" "), false); // Whitespace
+  assertEquals(is.uppercase(""), false); // Empty string
+
+  // Other data types
+  assertEquals(is.uppercase(null), false); // Null value
+  assertEquals(is.uppercase(undefined), false); // Undefined value
+  assertEquals(is.uppercase(true), false); // Boolean
+  assertEquals(is.uppercase(false), false); // Boolean
+  assertEquals(is.uppercase([]), false); // Array
+  assertEquals(is.uppercase({}), false); // Object
+  assertEquals(is.uppercase(() => {}), false); // Function
+  assertEquals(is.uppercase(new Date()), false); // Date
+  assertEquals(is.uppercase(/./), false); // Regex
+  assertEquals(is.uppercase(Symbol()), false); // Symbol
+  assertEquals(is.uppercase(BigInt(1)), false); // BigInt
+});
+
+Deno.test("whitespace", () => {
+  assertEquals(is.whitespace(" "), true);
+  assertEquals(is.whitespace("\t"), true);
+  assertEquals(is.whitespace("\n"), true);
+  assertEquals(is.whitespace("\r"), true);
+  assertEquals(is.whitespace("\v"), true);
+  assertEquals(is.whitespace("\f"), true);
+  assertEquals(is.whitespace(" \t\n\r\v\f"), true);
+
+  assertEquals(is.whitespace(""), false);
+  assertEquals(is.whitespace("a"), false);
+  assertEquals(is.whitespace("1"), false);
+  assertEquals(is.whitespace("!"), false);
+  assertEquals(is.whitespace("@"), false);
+  assertEquals(is.whitespace("#"), false);
+  assertEquals(is.whitespace("$"), false);
+  assertEquals(is.whitespace("%"), false);
+  assertEquals(is.whitespace("^"), false);
+  assertEquals(is.whitespace("&"), false);
+  assertEquals(is.whitespace("*"), false);
+
+  assertEquals(is.whitespace(" abc"), false);
+  assertEquals(is.whitespace("abc "), false);
+  assertEquals(is.whitespace(null), false);
+  assertEquals(is.whitespace(undefined), false);
+  assertEquals(is.whitespace(true), false);
+  assertEquals(is.whitespace(false), false);
+  assertEquals(is.whitespace([]), false);
+  assertEquals(is.whitespace({}), false);
+  assertEquals(is.whitespace(() => {}), false);
+  assertEquals(is.whitespace(new Date()), false);
+  assertEquals(is.whitespace(/./), false);
+  assertEquals(is.whitespace(Symbol()), false);
+  assertEquals(is.whitespace(BigInt(1)), false);
 });
