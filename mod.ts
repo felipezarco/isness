@@ -59,6 +59,7 @@
  * | `string`      | Checks if a value is a string     | "hello"           |
  * | `boolean`     | Checks if a value is a boolean    | true              |
  * | `booleanLike` | Checks if a value is boolean-like | true, "true" or 1 |
+ * | `number`      | Checks if a value is a number     | 123, "123", 0, 1.3|
  *
  * #### Date
  *
@@ -84,6 +85,7 @@ import { array } from "./type.ts";
 import { string } from "./type.ts";
 import { boolean } from "./type.ts";
 import { booleanLike } from "./type.ts";
+import { number } from "./type.ts";
 
 /**
  * The `is` object aggregates various modules that provide utility functions for different types of checks.
@@ -102,6 +104,7 @@ const is = {
   string,
   boolean,
   booleanLike,
+  number,
 };
 
 /**
@@ -128,4 +131,5 @@ export {
   string,
   uppercase,
   whitespace,
+  number,
 };
