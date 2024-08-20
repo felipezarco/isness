@@ -128,8 +128,8 @@ export {
   digit,
   hexadecimal,
   lowercase,
+  number,
   string,
   uppercase,
   whitespace,
-  number,
 };

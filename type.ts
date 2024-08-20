@@ -76,25 +76,26 @@ export function booleanLike(value: unknown): boolean {
  */
 
 export function number(value: unknown): boolean {
-
   /**
    * If value is a number and not NaN, return true
    */
-  if (typeof value === 'number' && !isNaN(value)) {
+  if (typeof value === "number" && !isNaN(value)) {
     return true;
-  }  
+  }
 
   /**
    * If value is a BigInt, return true
    */
-  if (typeof value === 'bigint') {
+  if (typeof value === "bigint") {
     return true;
   }
 
   /**
    * If value is a string, not empty, and is a number, return true
    */
-  if (typeof value === 'string' && value.trim() !== '' && !isNaN(Number(value))) {
+  if (
+    typeof value === "string" && value.trim() !== "" && !isNaN(Number(value))
+  ) {
     return true;
   }
 

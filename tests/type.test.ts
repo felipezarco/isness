@@ -162,4 +162,3 @@ Deno.test("number", () => {
   assertEquals(is.number(0 / 0), false, "Number");
   assertEquals(is.number(Number.NaN), false, "Number");
 });
-
