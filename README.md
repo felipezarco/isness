@@ -1,21 +1,19 @@
-# @zarco/isness
-
 A simple library to check if a value is what you expect it to be.
 
 ## Usage
 
 ### Install
 
-Deno:
-
-```sh
-deno add @zarco/isness
-```
-
 Node:
 
 ```sh
 npx jsr add @zarco/isness
+```
+
+Deno:
+
+```sh
+deno add @zarco/isness
 ```
 
 ### Usage
@@ -54,12 +52,13 @@ characters.
 
 The following methods check if a value is of a specific type.
 
-| Method        | Description                       | Example           |
-| ------------- | --------------------------------- | ----------------- |
-| `array`       | Checks if a value is an array     | [1, 2, 3]         |
-| `string`      | Checks if a value is a string     | "hello"           |
-| `boolean`     | Checks if a value is a boolean    | true              |
-| `booleanLike` | Checks if a value is boolean-like | true, "true" or 1 |
+| Method        | Description                       | Example             |
+| ------------- | --------------------------------- | ------------------- |
+| `array`       | Checks if a value is an array     | [1, 2, 3]           |
+| `string`      | Checks if a value is a string     | "hello"             |
+| `boolean`     | Checks if a value is a boolean    | true                |
+| `booleanLike` | Checks if a value is boolean-like | true, "true" or 1   |
+| `number`      | Checks if a value is a number     | 123, 3.14, "123", 0 |
 
 #### Date
 
