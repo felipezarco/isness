@@ -81,7 +81,7 @@ The following are the unique identificator methods
 | `url`    | Checks if a value is an URL        | "https://github.com/felipezarco" |
 
 More details about each method can be found in the
-[API documentation](https://jsr.io/@zarco/isness/docs).
+[API documentation](https://jsr.io/@zarco/isness/doc).
 
 ## Contributing
 
