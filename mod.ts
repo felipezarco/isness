@@ -13,32 +13,42 @@
  *
  * Methods that check if a value is of a specific type.
  *
- * #### Date
+ * #### Temporal
  *
- * Date-related methods.
+ * Date/time related methods.
+ *
+ * #### Identifiers
+ *
+ * URL, domain, email and other unique identifiers.
  */
 
-import { alphabetic } from "./character.ts";
-import { alphanumeric } from "./character.ts";
-import { ascii } from "./character.ts";
-import { digit } from "./character.ts";
-import { hexadecimal } from "./character.ts";
-import { lowercase } from "./character.ts";
-import { uppercase } from "./character.ts";
-import { whitespace } from "./character.ts";
+import { alphabetic } from "./lib/character/alphabetic.ts";
+import { alphanumeric } from "./lib/character/alphanumeric.ts";
+import { ascii } from "./lib/character/ascii.ts";
+import { digit } from "./lib/character/digit.ts";
+import { hexadecimal } from "./lib/character/hexadecimal.ts";
+import { lowercase } from "./lib/character/lowercase.ts";
+import { uppercase } from "./lib/character/uppercase.ts";
+import { whitespace } from "./lib/character/whitespace.ts";
 
-import { date } from "./date.ts";
+import { date } from "./lib/temporal/date.ts";
 
-import { array } from "./type.ts";
-import { string } from "./type.ts";
-import { boolean } from "./type.ts";
-import { booleanLike } from "./type.ts";
-import { number } from "./type.ts";
+import { array } from "./lib/type/array.ts";
+import { string } from "./lib/type/string.ts";
+import { boolean } from "./lib/type/boolean.ts";
+import { booleanLike } from "./lib/type/booleanLike.ts";
+import { number } from "./lib/type/number.ts";
+import { objectId } from "./lib/type/objectId.ts";
+
+import { domain } from "./lib/identifier/domain.ts";
+import { email } from "./lib/identifier/email.ts";
+import { url } from "./lib/identifier/url.ts";
 
 /**
  * The `is` object aggregates various modules that provide utility functions for different types of checks.
  */
 const is = {
+  /** Character checks */
   alphabetic,
   alphanumeric,
   ascii,
@@ -47,12 +57,19 @@ const is = {
   lowercase,
   uppercase,
   whitespace,
+  /** Temporal checks */
   date,
+  /** Type checks */
   array,
   string,
   boolean,
   booleanLike,
   number,
+  objectId,
+  /** Identifier checks */
+  domain,
+  email,
+  url,
 };
 
 /**
@@ -66,18 +83,26 @@ export default is;
  * @description Each function is exported separately
  */
 export {
+  /** Character checks */
   alphabetic,
   alphanumeric,
+  /** Type checks */
   array,
   ascii,
   boolean,
   booleanLike,
+  /** Temporal checks */
   date,
   digit,
+  /** Identifier checks */
+  domain,
+  email,
   hexadecimal,
   lowercase,
   number,
+  objectId,
   string,
   uppercase,
+  url,
   whitespace,
 };

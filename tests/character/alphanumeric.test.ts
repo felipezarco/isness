@@ -1,0 +1,52 @@
+import is from "../../mod.ts";
+import { assertEquals } from "https://deno.land/std@0.224.0/assert/assert_equals.ts";
+
+Deno.test("alphanumeric", () => {
+  assertEquals(is.alphanumeric("a"), true);
+  assertEquals(is.alphanumeric("A"), true);
+  assertEquals(is.alphanumeric("0"), true);
+  assertEquals(is.alphanumeric("1"), true);
+  assertEquals(is.alphanumeric("9"), true);
+  assertEquals(is.alphanumeric("f"), true);
+  assertEquals(is.alphanumeric("F"), true);
+  assertEquals(is.alphanumeric("g"), true);
+  assertEquals(is.alphanumeric("G"), true);
+  assertEquals(is.alphanumeric("z"), true);
+  assertEquals(is.alphanumeric("Z"), true);
+
+  assertEquals(is.alphanumeric(""), false);
+  assertEquals(is.alphanumeric(" "), false);
+
+  assertEquals(is.alphanumeric("!"), false);
+  assertEquals(is.alphanumeric("@"), false);
+  assertEquals(is.alphanumeric("#"), false);
+  assertEquals(is.alphanumeric("$"), false);
+  assertEquals(is.alphanumeric("%"), false);
+  assertEquals(is.alphanumeric("^"), false);
+  assertEquals(is.alphanumeric("&"), false);
+  assertEquals(is.alphanumeric("*"), false);
+  assertEquals(is.alphanumeric("("), false);
+  assertEquals(is.alphanumeric(")"), false);
+  assertEquals(is.alphanumeric("-"), false);
+  assertEquals(is.alphanumeric("_"), false);
+  assertEquals(is.alphanumeric("+"), false);
+  assertEquals(is.alphanumeric("="), false);
+  assertEquals(is.alphanumeric("{"), false);
+  assertEquals(is.alphanumeric("["), false);
+  assertEquals(is.alphanumeric("}"), false);
+  assertEquals(is.alphanumeric("]"), false);
+  assertEquals(is.alphanumeric("|"), false);
+  assertEquals(is.alphanumeric("\\"), false);
+  assertEquals(is.alphanumeric(":"), false);
+  assertEquals(is.alphanumeric(";"), false);
+  assertEquals(is.alphanumeric('"'), false);
+  assertEquals(is.alphanumeric("'"), false);
+  assertEquals(is.alphanumeric("<"), false);
+  assertEquals(is.alphanumeric(","), false);
+  assertEquals(is.alphanumeric(">"), false);
+  assertEquals(is.alphanumeric("."), false);
+  assertEquals(is.alphanumeric("?"), false);
+  assertEquals(is.alphanumeric("/"), false);
+  assertEquals(is.alphanumeric("`"), false);
+  assertEquals(is.alphanumeric("~"), false);
+});

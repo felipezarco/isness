@@ -52,21 +52,36 @@ characters.
 
 The following methods check if a value is of a specific type.
 
-| Method        | Description                       | Example             |
-| ------------- | --------------------------------- | ------------------- |
-| `array`       | Checks if a value is an array     | [1, 2, 3]           |
-| `string`      | Checks if a value is a string     | "hello"             |
-| `boolean`     | Checks if a value is a boolean    | true                |
-| `booleanLike` | Checks if a value is boolean-like | true, "true" or 1   |
-| `number`      | Checks if a value is a number     | 123, 3.14, "123", 0 |
+| Method        | Description                       | Example                    |
+| ------------- | --------------------------------- | -------------------------- |
+| `array`       | Checks if a value is an array     | [1, 2, 3]                  |
+| `string`      | Checks if a value is a string     | "hello"                    |
+| `boolean`     | Checks if a value is a boolean    | true                       |
+| `booleanLike` | Checks if a value is boolean-like | true, "true" or 1          |
+| `number`      | Checks if a value is a number     | 123, 3.14, "123", 0        |
+| `objectId`    | Checks if a value is an ObjectId  | "507f1f77bcf86cd799439011" |
+| `string`      | Checks if a value is a string     | "hello", ""                |
 
-#### Date
+#### Temporal
 
-The following are the date-related methods.
+The following are the date/time related methods.
 
 | Method | Description                 | Example                  |
 | ------ | --------------------------- | ------------------------ |
 | `date` | Checks if a value is a date | new Date(), "2021-01-01" |
+
+#### Identifier
+
+The following are the unique identificator methods
+
+| Method   | Description                        | Example                          |
+| -------- | ---------------------------------- | -------------------------------- |
+| `domain` | Checks if a value is a domain name | "example.com"                    |
+| `email`  | Checks if a value is an email      | "felipezarco@hotmail.com"        |
+| `url`    | Checks if a value is an URL        | "https://github.com/felipezarco" |
+
+More details about each method can be found in the
+[API documentation](https://jsr.io/@zarco/isness/docs).
 
 ## Contributing
 
