@@ -44,45 +44,7 @@ import { domain } from "./lib/identifier/domain.ts";
 import { email } from "./lib/identifier/email.ts";
 import { url } from "./lib/identifier/url.ts";
 
-/**
- * The `is` object aggregates various modules that provide utility functions for different types of checks.
- */
-const is = {
-  /** Character checks */
-  alphabetic,
-  alphanumeric,
-  ascii,
-  digit,
-  hexadecimal,
-  lowercase,
-  uppercase,
-  whitespace,
-  /** Temporal checks */
-  date,
-  /** Type checks */
-  array,
-  string,
-  boolean,
-  booleanLike,
-  number,
-  objectId,
-  /** Identifier checks */
-  domain,
-  email,
-  url,
-};
-
-/**
- * Export as default
- * @description A collection of functions to check the type of a value.
- */
-export default is;
-
-/**
- * Export as named functions
- * @description Each function is exported separately
- */
-export {
+export default {
   /** Character checks */
   alphabetic,
   alphanumeric,

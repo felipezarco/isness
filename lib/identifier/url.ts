@@ -4,10 +4,8 @@
  * @returns Whether the value is a valid URL
  * @param options - Options for the URL check
  * @param options.format - Format of the URL to check
- * @example
- *
- * is.url("http://www.felipezarco.com") // true
- * is.url("http://www.felipezarco.com/foo/bar/test.html", { format: 'uri' }) // true
+ * @example is.url("http://www.felipezarco.com")
+ * @example is.url("http://www.felipezarco.com", { format: 'http' })
  */
 
 // assertEquals(
