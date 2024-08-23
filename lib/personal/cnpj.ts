@@ -6,7 +6,7 @@
 export default function cnpj(
   value: unknown,
   options?: { requireMask: boolean },
-) {
+): boolean {
   if (!value) return false;
   if (typeof value !== "string") return false;
   value = value.trim();
