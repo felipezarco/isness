@@ -13,7 +13,7 @@ npx jsr add @zarco/isness
 Deno:
 
 ```sh
-deno add @zarco/isness
+import is from "jsr:@zarco/isness"
 ```
 
 ### Usage
@@ -79,6 +79,13 @@ The following are the unique identificator methods
 | `domain` | Checks if a value is a domain name | "example.com"                    |
 | `email`  | Checks if a value is an email      | "felipezarco@hotmail.com"        |
 | `url`    | Checks if a value is an URL        | "https://github.com/felipezarco" |
+
+### Person
+
+| Method     | Description                      | Example             |
+| ---------- | -------------------------------- | ------------------- |
+| `name`     | Checks if a value is a name      | "Zarco"             |
+| `fullName` | Checks if a value is a full name | "Luiz Felipe Zarco" |
 
 More details about each method can be found in the
 [API documentation](https://jsr.io/@zarco/isness/doc).
