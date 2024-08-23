@@ -29,7 +29,7 @@
 //   "Invalid URL with path ending in dot",
 // );
 
-export function url(value: unknown, options: {
+export default function url(value: unknown, options: {
   format: "uri" | "http" | "https" | "web";
 } = { format: "web" }): boolean {
   if (typeof value !== "string") {

@@ -9,6 +9,6 @@
  * is.array('') // false
  * is.array(0) // false
  */
-export function array(value: unknown): boolean {
+export default function array(value: unknown): boolean {
   return Array.isArray(value);
 }

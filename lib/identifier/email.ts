@@ -3,7 +3,7 @@
  * @param value - Value to check
  * @returns Whether the value is a valid email
  */
-export function email(value: unknown): boolean {
+export default function email(value: unknown): boolean {
   if (typeof value !== "string") {
     return false;
   }

@@ -6,7 +6,7 @@
  * @param options.format - The format to validate the date string against. Supported formats are 'ISO8601', 'American', 'European', and 'Asian'.
  * @returns `true` if the value is a valid date according to the specified format or any of the supported formats, otherwise `false`.
  */
-export function date(
+export default function date(
   value: unknown,
   options?: { format: "ISO8601" | "American" | "European" | "Asian" },
 ): boolean {

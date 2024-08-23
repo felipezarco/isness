@@ -17,7 +17,7 @@
  * is.booleanLike(null) // false
  * is.booleanLike(undefined) // false
  */
-export function booleanLike(value: unknown): boolean {
+export default function booleanLike(value: unknown): boolean {
   if (typeof value === "boolean") return true;
   if (value === "true") return true;
   if (value === "false") return true;

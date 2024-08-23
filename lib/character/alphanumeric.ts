@@ -4,7 +4,7 @@
  * @param value - The value to be checked.
  * @returns `true` if the value is alphanumeric, otherwise `false`.
  */
-export function alphanumeric(value: unknown): boolean {
+export default function alphanumeric(value: unknown): boolean {
   // Check if the value is a string
   if (typeof value !== "string") {
     return false;

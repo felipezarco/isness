@@ -3,6 +3,6 @@
  * @param value The value to check
  * @returns boolean
  */
-export function string(value: unknown): boolean {
+export default function string(value: unknown): boolean {
   return typeof value === "string";
 }

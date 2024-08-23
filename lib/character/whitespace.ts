@@ -3,7 +3,7 @@
  * @param value The value to check
  * @returns `true` if the string contains only whitespace characters, otherwise `false`.
  */
-export function whitespace(value: unknown): boolean {
+export default function whitespace(value: unknown): boolean {
   // Check if the value is a string
   if (typeof value !== "string") {
     return false;

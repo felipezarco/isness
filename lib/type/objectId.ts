@@ -17,7 +17,7 @@
  * @returns {boolean} true if `value` is an ObjectId instance _or_ a 24 char hex string
  */
 
-export function objectId(value: unknown): boolean {
+export default function objectId(value: unknown): boolean {
   const isBsonType = (obj: unknown, typename: unknown) => {
     return (
       typeof obj === "object" &&

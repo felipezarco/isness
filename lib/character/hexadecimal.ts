@@ -3,7 +3,7 @@
  * @param value The value to check
  * @returns `true` if the value is a valid hexadecimal, otherwise `false`.
  */
-export function hexadecimal(value: unknown): boolean {
+export default function hexadecimal(value: unknown): boolean {
   // Check if the value is a string
   if (typeof value !== "string") {
     return false;

@@ -3,7 +3,7 @@
  * @param value The value to check
  * @returns `true` if the value is a single digit, otherwise `false`.
  */
-export function digit(value: unknown): boolean {
+export default function digit(value: unknown): boolean {
   // Check if the value is a number and within the single digit range 0-9
   if (typeof value === "number" && value >= 0 && value <= 9) {
     return true;

@@ -20,31 +20,77 @@
  * #### Identifiers
  *
  * URL, domain, email and other unique identifiers.
+ *
+ * #### Person
+ *
+ * Personal data value checks or similar.
  */
 
-import { alphabetic } from "./lib/character/alphabetic.ts";
-import { alphanumeric } from "./lib/character/alphanumeric.ts";
-import { ascii } from "./lib/character/ascii.ts";
-import { digit } from "./lib/character/digit.ts";
-import { hexadecimal } from "./lib/character/hexadecimal.ts";
-import { lowercase } from "./lib/character/lowercase.ts";
-import { uppercase } from "./lib/character/uppercase.ts";
-import { whitespace } from "./lib/character/whitespace.ts";
+import alphabetic from "./lib/character/alphabetic.ts";
+import alphanumeric from "./lib/character/alphanumeric.ts";
+import ascii from "./lib/character/ascii.ts";
+import digit from "./lib/character/digit.ts";
+import hexadecimal from "./lib/character/hexadecimal.ts";
+import lowercase from "./lib/character/lowercase.ts";
+import uppercase from "./lib/character/uppercase.ts";
+import whitespace from "./lib/character/whitespace.ts";
 
-import { date } from "./lib/temporal/date.ts";
+import date from "./lib/temporal/date.ts";
 
-import { array } from "./lib/type/array.ts";
-import { string } from "./lib/type/string.ts";
-import { boolean } from "./lib/type/boolean.ts";
-import { booleanLike } from "./lib/type/booleanLike.ts";
-import { number } from "./lib/type/number.ts";
-import { objectId } from "./lib/type/objectId.ts";
+import array from "./lib/type/array.ts";
+import string from "./lib/type/string.ts";
+import boolean from "./lib/type/boolean.ts";
+import booleanLike from "./lib/type/booleanLike.ts";
+import number from "./lib/type/number.ts";
+import objectId from "./lib/type/objectId.ts";
 
-import { domain } from "./lib/identifier/domain.ts";
-import { email } from "./lib/identifier/email.ts";
-import { url } from "./lib/identifier/url.ts";
+import domain from "./lib/identifier/domain.ts";
+import email from "./lib/identifier/email.ts";
+import url from "./lib/identifier/url.ts";
 
-export default {
+import name from "./lib/person/name.ts";
+
+/**
+ * The `is` object aggregates various modules that provide utility functions for different types of checks.
+ */
+const is = {
+  /** Character checks */
+  alphabetic,
+  alphanumeric,
+  ascii,
+  digit,
+  hexadecimal,
+  lowercase,
+  uppercase,
+  whitespace,
+  /** Temporal checks */
+  date,
+  /** Type checks */
+  array,
+  string,
+  boolean,
+  booleanLike,
+  number,
+  objectId,
+  /** Identifier checks */
+  domain,
+  email,
+  url,
+  /** Person */
+  name,
+};
+
+/**
+ * Export as default
+ * @description A collection of functions to check the type of a value.
+ */
+export default is;
+
+/**
+ * Export as named functions
+ * @description Each function is exported separately
+ */
+export {
   /** Character checks */
   alphabetic,
   alphanumeric,
@@ -61,6 +107,8 @@ export default {
   email,
   hexadecimal,
   lowercase,
+  /** Person */
+  name,
   number,
   objectId,
   string,

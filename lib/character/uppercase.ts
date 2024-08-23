@@ -3,7 +3,7 @@
  * @param value The value to check
  * @returns `true` if the string is entirely uppercase, otherwise `false`.
  */
-export function uppercase(value: unknown): boolean {
+export default function uppercase(value: unknown): boolean {
   // Check if the value is a string
   if (typeof value !== "string") {
     return false;

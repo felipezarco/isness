@@ -12,7 +12,7 @@
  * is.number('') // false
  */
 
-export function number(value: unknown): boolean {
+export default function number(value: unknown): boolean {
   /**
    * If value is a number and not NaN, return true
    */

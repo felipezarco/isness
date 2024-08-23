@@ -3,7 +3,7 @@
  * @param value - Value to check
  * @returns Whether the value is a valid domain
  */
-export function domain(value: unknown): boolean {
+export default function domain(value: unknown): boolean {
   if (typeof value !== "string") {
     return false;
   }

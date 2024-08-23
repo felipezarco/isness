@@ -3,7 +3,7 @@
  * @param str The string to check
  * @returns `true` if the string is entirely lowercase, otherwise `false`.
  */
-export function lowercase(str: unknown): boolean {
+export default function lowercase(str: unknown): boolean {
   // Check if the value is a string
   if (typeof str !== "string") {
     return false;
