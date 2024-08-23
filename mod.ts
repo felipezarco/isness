@@ -49,6 +49,7 @@ import email from "./lib/identifier/email.ts";
 import url from "./lib/identifier/url.ts";
 
 import name from "./lib/person/name.ts";
+import fullName from "./lib/person/fullName.ts";
 
 /**
  * The `is` object aggregates various modules that provide utility functions for different types of checks.
@@ -67,16 +68,17 @@ const is = {
   date,
   /** Type checks */
   array,
-  string,
   boolean,
   booleanLike,
   number,
   objectId,
+  string,
   /** Identifier checks */
   domain,
   email,
   url,
   /** Person */
+  fullName,
   name,
 };
 
@@ -105,9 +107,10 @@ export {
   /** Identifier checks */
   domain,
   email,
+  /** Person */
+  fullName,
   hexadecimal,
   lowercase,
-  /** Person */
   name,
   number,
   objectId,
