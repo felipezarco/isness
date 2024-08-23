@@ -86,6 +86,9 @@ The following are the unique identificator methods
 | ---------- | -------------------------------- | ------------------- |
 | `name`     | Checks if a value is a name      | "Zarco"             |
 | `fullName` | Checks if a value is a full name | "Luiz Felipe Zarco" |
+| `cpf`      | Checks if a value is a CPF       | "123.456.789-09"    |
+| `cnpj`     | Checks if a value is a CNPJ      | "12.345.678/0001-01"|
+| `cellphone`| Checks if a value is a phone     | "+55 11 1234-5678"  |
 
 More details about each method can be found in the
 [API documentation](https://jsr.io/@zarco/isness/doc).

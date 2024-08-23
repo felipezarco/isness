@@ -45,11 +45,14 @@ import number from "./lib/type/number.ts";
 import objectId from "./lib/type/objectId.ts";
 
 import domain from "./lib/identifier/domain.ts";
-import email from "./lib/identifier/email.ts";
 import url from "./lib/identifier/url.ts";
 
-import name from "./lib/person/name.ts";
-import fullName from "./lib/person/fullName.ts";
+import name from "./lib/personal/name.ts";
+import fullName from "./lib/personal/fullName.ts";
+import email from "./lib/personal/email.ts";
+import cellphone from "./lib/personal/cellphone.ts";
+import cnpj from "./lib/personal/cnpj.ts";
+import cpf from "./lib/personal/cpf.ts";
 
 /**
  * The `is` object aggregates various modules that provide utility functions for different types of checks.
@@ -75,11 +78,14 @@ const is = {
   string,
   /** Identifier checks */
   domain,
-  email,
   url,
-  /** Person */
+  /** Personal */
   fullName,
   name,
+  email,
+  cellphone,
+  cnpj,
+  cpf
 };
 
 /**
@@ -96,26 +102,29 @@ export {
   /** Character checks */
   alphabetic,
   alphanumeric,
-  /** Type checks */
-  array,
   ascii,
-  boolean,
-  booleanLike,
-  /** Temporal checks */
-  date,
   digit,
-  /** Identifier checks */
-  domain,
-  email,
-  /** Person */
-  fullName,
   hexadecimal,
   lowercase,
-  name,
+  uppercase,
+  whitespace,
+  /** Temporal checks */
+  date,
+  /** Type checks */
+  array,
+  boolean,
+  booleanLike,
   number,
   objectId,
   string,
-  uppercase,
+  /** Identifier checks */
+  domain,
   url,
-  whitespace,
+  /** Personal */
+  fullName,
+  name,
+  email,
+  cellphone,
+  cnpj,
+  cpf
 };
