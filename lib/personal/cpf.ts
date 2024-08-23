@@ -4,7 +4,7 @@
  * @returns
  */
 
-export default function cof(
+export default function cpf(
   value: unknown,
   options?: { requireMask: boolean },
 ): boolean {
