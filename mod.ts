@@ -85,7 +85,7 @@ const is = {
   email,
   cellphone,
   cnpj,
-  cpf
+  cpf,
 };
 
 /**
@@ -102,29 +102,29 @@ export {
   /** Character checks */
   alphabetic,
   alphanumeric,
-  ascii,
-  digit,
-  hexadecimal,
-  lowercase,
-  uppercase,
-  whitespace,
-  /** Temporal checks */
-  date,
   /** Type checks */
   array,
+  ascii,
   boolean,
   booleanLike,
+  cellphone,
+  cnpj,
+  cpf,
+  /** Temporal checks */
+  date,
+  digit,
+  /** Identifier checks */
+  domain,
+  email,
+  /** Personal */
+  fullName,
+  hexadecimal,
+  lowercase,
+  name,
   number,
   objectId,
   string,
-  /** Identifier checks */
-  domain,
+  uppercase,
   url,
-  /** Personal */
-  fullName,
-  name,
-  email,
-  cellphone,
-  cnpj,
-  cpf
+  whitespace,
 };
